@@ -1,6 +1,31 @@
 ### 北京中盾安全技术有限公司
 #### 1.Android服务启动的方式有哪些,区别是什么？
 #### 2.第一个人10岁，第二个人比第一个人大2岁，以此类推，用递归方式算出第10个人年龄多大？
+```
+package com.test;
+ 
+public class ComputeAge {
+	/**
+	 * 递归函数的执行过程具有三个特点： 
+	 * 1、函数名相同 2、不断地自调用 3、最后被调用的函数要最先被返回
+	 * @param n
+	 * @return
+	 */
+	public static int getComputeAge(int n) {
+		int age = 0;
+		if (n == 1) {
+			age = 10;
+		} else {
+			age = getComputeAge(n - 1) + 2;
+		}
+		return age;
+	}
+ 
+	public static void main(String[] args) {
+		System.out.println(getComputeAge(10));
+	}
+}
+```
 #### 3.图书馆开通了两类在线杂志：A类型，B类型，并且对外提供订阅服务，当杂志更新时，需要主动提醒订阅者。用户UserA，userB订阅了A类杂志。用户UserC和UserD订阅了B类杂志，无论是A类还是B类杂志在更新时都需要通知到订阅者。
 #### 请用发布订阅模式实现上述需求。
 #### 4.设计人脸登录流程。
